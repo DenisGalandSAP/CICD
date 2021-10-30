@@ -16,10 +16,14 @@
         "@sap/ux-specification": "^1.90.12",
         "sqlite3": "^5.0.2"
     },
+    "engines": {
+        "node": ">=14"
+    },
     "scripts": {
         "start": "cds run",
         "watch-risks": "cds watch --open risks/webapp/index.html#fe-lrop-v4",
-        "watch-mitigations": "cds watch --open mitigations/webapp/index.html#fe-lrop-v4"
+        "watch-mitigations": "cds watch --open mitigations/webapp/index.html#fe-lrop-v4",
+        "undeploy": "cf undeploy cpapp --delete-services --delete-service-keys"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",
@@ -56,8 +60,8 @@
                 "kind": "sql"
             },
             "uaa": {
-              "kind": "xsuaa",
-              "credentials": {}
+                "kind": "xsuaa",
+                "credentials": {}
             }
         },
         "hana": {
